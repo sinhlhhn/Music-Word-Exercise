@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Exercise" representedClassName="Exercise" syncable="YES">
+        <attribute name="link" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="requiredTimes" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="exerciseLog" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseLog" inverseName="exercise" inverseEntity="ExerciseLog"/>
+    </entity>
+    <entity name="ExerciseLog" representedClassName="ExerciseLog" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="finishedTimes" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="exerciseLog" inverseEntity="Exercise"/>
+    </entity>
+    <entity name="Song" representedClassName="Song" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="word" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="song" inverseEntity="Word"/>
+    </entity>
+    <entity name="Word" representedClassName="Word" syncable="YES">
+        <attribute name="eng" optional="YES" attributeType="String"/>
+        <attribute name="img" optional="YES" attributeType="String"/>
+        <attribute name="vn" optional="YES" attributeType="String"/>
+        <relationship name="song" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Song" inverseName="word" inverseEntity="Song"/>
+    </entity>
+    <elements>
+        <element name="Exercise" positionX="-195.43359375" positionY="26.84765625" width="128" height="103"/>
+        <element name="ExerciseLog" positionX="9" positionY="36" width="128" height="103"/>
+        <element name="Song" positionX="0" positionY="0" width="128" height="73"/>
+        <element name="Word" positionX="0" positionY="0" width="128" height="103"/>
+    </elements>
+</model>
